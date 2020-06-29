@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 配置setting属性-->
+    <settings>
+        <!-- 开启了一个驼峰命名规则-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 下面这个接口文件扫描，在spring和mybatis整合文件中配置了-->
+    <!--  mappers中注册我们所有写的dao接口的实现文件
+    <mappers>
+       <mapper resource="cn/liuliang/Dao/*.xml"/>
+       <package name="cn/liuliang/Dao/"/>
+    </mappers>
+    -->
+</configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.liuliang.javaeesys.dao.IQueryDao">
+    <select id="findByCondition" resultType="cn.liuliang.javaeesys.domain.Train" parameterType="cn.liuliang.javaeesys.domain.Condition">
+        SELECT * FROM t_train
+        <where>
+            <if test="trainType != null and trainType != '' ">
+                AND train_type = #{trainType}
+            </if>
+            <if test="trainMark != null and trainMark != ''">
+                AND train_mark = #{trainMark}
+            </if>
+            <if test="originStation != null and originStation != ''">
+                AND origin_station = #{originStation}
+            </if>
+            <if test="destination != null and destination != ''">
+                AND destination = #{destination}
+            </if>
+        </where>
+    </select>
+</mapper>

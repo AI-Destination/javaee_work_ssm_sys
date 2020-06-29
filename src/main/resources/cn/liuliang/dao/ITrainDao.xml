@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.liuliang.javaeesys.dao.ITrainDao">
+    <insert id="add" parameterType="cn.liuliang.javaeesys.domain.Train">
+
+
+
+
+                                        INSERT INTO t_train
+                                        VALUES(
+                                        #{trainId},
+                                        #{trainType},
+                                        #{trainMark},
+                                        #{departureTimeString},
+                                        #{originStation},
+                                        #{destination},
+                                        #{travelTime},
+                                        #{busload},
+                                        #{ticketsLeft})
+
+
+
+
+    </insert>
+
+    <select id="findAll" resultType="cn.liuliang.javaeesys.domain.Train">
+
+
+
+                            SELECT * FROM t_train
+
+
+
+    </select>
+
+    <select id="findOne" resultType="cn.liuliang.javaeesys.domain.Train">
+
+                SELECT * FROM t_train WHERE train_id = #{trainId}
+
+    </select>
+    <update id="modifyVotes">
+        UPDATE t_train SET tickets_left = tickets_left + #{i} WHERE train_id = #{trainId}
+    </update>
+</mapper>
